@@ -2,8 +2,10 @@ MIT License
 
 Copyright (c) 2026 Yekta Ghafelehbashi
 
-Applies to the website code in docs/ (index.html, style.css, script.js).
+Applies to the website code in docs/ (*.html, *.css, *.js).
 The written guide content is licensed under CC BY 4.0 (see LICENSE).
+The preview videos and images in docs/previews/ show Yekta Ghafelehbashi and are
+(c) Yekta Ghafelehbashi, all rights reserved; neither licence covers them.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

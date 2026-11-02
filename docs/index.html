@@ -3,209 +3,115 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>جعبه‌ابزار ادیت ویدیو با هوش مصنوعی</title>
-  <meta name="description" content="راهنمای فارسی و قدم‌به‌قدم برای گذاشتن افکت‌های حرفه‌ای روی ویدیوهای خودتان با Claude Code.">
+  <title>کتابخانه‌ی افکت‌های ویدیو با Claude | یکتا</title>
+  <meta name="description" content="۴۵ افکت حرفه‌ای ویدیو با پیش‌نمایش و پرامپت آماده برای Claude Code؛ راهنمای فارسی Yekta Ghafelehbashi.">
+  <meta name="theme-color" content="#0b0a0f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
+  <header class="topbar">
     <div class="wrap">
-      <p class="eyebrow">راهنمای رایگان · بدون نیاز به برنامه‌نویسی</p>
-      <h1>جعبه‌ابزار ادیت ویدیو با هوش مصنوعی 🎬</h1>
-      <p class="lead">افکت‌های حرفه‌ای مثل <code>orbit</code>، <code>spotlight</code> و <code>glass-widgets</code> را با کمک <strong>Claude Code</strong> روی ویدیوهای خودتان بگذارید.</p>
-      <div class="notice">
-        افکت‌ها و کد اصلی کارِ <a href="https://github.com/Vibha-Ramprakash">Vibha Ramprakash</a> هستند (پروژه‌ی متن‌باز <a href="https://github.com/Vibha-Ramprakash/claude-video-effects">claude-video-effects</a>). این سایت فقط یک راهنمای آموزشی فارسی است. <a href="#credits">بیشتر بخوانید</a>
-      </div>
-      <nav class="toc" aria-label="فهرست">
-        <a href="#how">چطور کار می‌کند؟</a>
-        <a href="#prereq">پیش‌نیازها</a>
-        <a href="#mac">نصب روی مک</a>
-        <a href="#win">نصب روی ویندوز</a>
-        <a href="#prompts">پرامپت‌ها</a>
-        <a href="#errors">رفع خطا</a>
-        <a href="#credits">قدردانی</a>
+      <a class="brand" href="index.html"><span class="brand-mark">Y</span>جعبه‌ابزار ویدیو <small>· یکتا</small></a>
+      <nav class="nav" aria-label="صفحه‌ها">
+        <a href="index.html" aria-current="page">افکت‌ها</a>
+        <a href="guide.html">نصب و راهنما</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section id="how">
-      <h2>چطور کار می‌کند؟</h2>
-      <p><strong>Claude Code</strong> دستیار هوش مصنوعی Anthropic است که روی کامپیوتر شما برنامه نصب می‌کند و دستور اجرا می‌کند؛ شما فقط به زبان ساده می‌گویید چه می‌خواهید.</p>
-      <p>پروژه‌ی <strong>claude-video-effects</strong> یک «مهارت» (Skill) برای Claude Code است. بعد از نصب، ویدیو را به Claude می‌دهید و می‌نویسید مثلاً <code dir="ltr">/effects orbit from 3 to 6 seconds</code>. Claude صورت شما را پیدا می‌کند، افکت را طوری می‌گذارد که روی صورتتان نیفتد و یک فایل جدید کنار ویدیوی اصلی می‌سازد.</p>
-      <ol class="steps">
-        <li><span>۱</span>نصب ابزارها (یک بار)</li>
-        <li><span>۲</span>نصب مهارت افکت‌ها (یک بار)</li>
-        <li><span>۳</span>دادن ویدیو و انتخاب افکت</li>
-        <li><span>۴</span>خروجی مخصوص اینستاگرام</li>
-      </ol>
-    </section>
-
-    <section id="prereq">
-      <h2>پیش‌نیازها</h2>
-      <p class="muted">بر اساس فایل‌های خودِ پروژه‌ی اصلی (README، requirements.txt و scripts/setup.sh):</p>
-      <ul class="cards">
-        <li><b>Claude Code</b> دستیاری که همه‌ی کارها را انجام می‌دهد. به اشتراک پولی Claude (مثل Pro یا Max) نیاز دارد.</li>
-        <li><b>Git</b> برای دانلود پروژه از گیت‌هاب. روی ویندوز، Claude Code خودش هم به آن نیاز دارد.</li>
-        <li><b>Python ۳٫۱۰ یا جدیدتر</b> زبانی که افکت‌ها با آن نوشته شده‌اند (۳٫۱۲ پیشنهادی).</li>
-        <li><b>FFmpeg + ffprobe</b> موتور ساختن و خواندن فایل ویدیو.</li>
-        <li><b>کتابخانه‌های پایتون</b> numpy، opencv-python، pillow و mediapipe. <em>خودکار نصب می‌شوند.</em></li>
-        <li><b>faster-whisper</b> (اختیاری) برای پیدا کردن زمان هر کلمه. بار اول خودکار نصب می‌شود.</li>
-        <li><b>Homebrew / winget</b> ابزار نصب برنامه روی مک / ویندوز.</li>
-        <li><b>حساب GitHub</b> (اختیاری) برای دانلود لازم نیست.</li>
-      </ul>
-      <p class="tip">💡 لازم نیست همه را دستی نصب کنید: <a href="#p1">پرامپت شماره‌ی ۱</a> از Claude می‌خواهد خودش بررسی و نصب کند.</p>
-    </section>
-
-    <section id="mac">
-      <h2>نصب روی مک (macOS)</h2>
-      <div class="step">
-        <h3>قدم ۱: ترمینال را باز کنید</h3>
-        <p><kbd>⌘ Command</kbd> + <kbd>Space</kbd> را بزنید، بنویسید Terminal و Enter بزنید.</p>
-      </div>
-      <div class="step">
-        <h3>قدم ۲: نصب Claude Code</h3>
-        <pre dir="ltr"><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
-        <p>بعد بنویسید <code>claude</code> و وارد حسابتان شوید. یا نسخه‌ی دسکتاپ را از <a href="https://claude.ai/download">claude.ai/download</a> بگیرید و از تب Code استفاده کنید.</p>
-      </div>
-      <div class="step">
-        <h3>قدم ۳: نصب Git، Python و FFmpeg</h3>
-        <p>اگر Homebrew ندارید، اول از <a href="https://brew.sh">brew.sh</a> نصبش کنید. بعد:</p>
-        <pre dir="ltr"><code>brew install git python@3.12 ffmpeg</code></pre>
-      </div>
-      <div class="step">
-        <h3>قدم ۴: نصب مهارت افکت‌ها</h3>
-        <pre dir="ltr"><code>git clone https://github.com/Vibha-Ramprakash/claude-video-effects ~/.claude/skills/effects</code></pre>
-      </div>
-      <div class="step">
-        <h3>قدم ۵: Claude Code را ببندید و دوباره باز کنید</h3>
-        <p>حالا <code dir="ltr">/effects</code> آماده است. بار اول ۱ تا ۳ دقیقه طول می‌کشد تا کتابخانه‌ها نصب شوند.</p>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">رایگان · فارسی · بدون نیاز به برنامه‌نویسی</p>
+        <h1>۴۵ افکت حرفه‌ای برای ریلزهایت،<br><span class="grad">فقط با یک پرامپت</span></h1>
+        <p class="lead">افکت را ببین، پرامپتش را کپی کن و داخل Claude Code بفرست. همه‌ی پیش‌نمایش‌های این صفحه روی ویدیوی خودم ساخته شده‌اند، با همان کد واقعی افکت‌ها.</p>
+        <div class="cta">
+          <a class="btn primary" href="#library">دیدن افکت‌ها</a>
+          <a class="btn" href="guide.html">اول نصب کنم ←</a>
+        </div>
+        <div class="stats"><span><b>۴۵</b>افکت</span><span><b>۵</b>دسته</span><span><b>۱</b>پرامپت برای هرکدام</span></div>
       </div>
     </section>
 
-    <section id="win">
-      <h2>نصب روی ویندوز</h2>
-      <div class="step">
-        <h3>قدم ۱: PowerShell را باز کنید</h3>
-        <p>روی Start کلیک کنید، بنویسید PowerShell و بازش کنید.</p>
-      </div>
-      <div class="step">
-        <h3>قدم ۲: نصب Git</h3>
-        <p>Claude Code روی ویندوز به Git for Windows نیاز دارد (Git Bash هم همراهش می‌آید):</p>
-        <pre dir="ltr"><code>winget install --id Git.Git -e</code></pre>
-        <p>بعد PowerShell را ببندید و دوباره باز کنید.</p>
-      </div>
-      <div class="step">
-        <h3>قدم ۳: نصب Claude Code</h3>
-        <pre dir="ltr"><code>irm https://claude.ai/install.ps1 | iex</code></pre>
-        <p>بعد بنویسید <code>claude</code> و وارد حسابتان شوید.</p>
-      </div>
-      <div class="step">
-        <h3>قدم ۴: نصب Python و FFmpeg</h3>
-        <pre dir="ltr"><code>winget install Python.Python.3.12
-winget install ffmpeg</code></pre>
-        <p>دوباره PowerShell را ببندید و باز کنید.</p>
-      </div>
-      <div class="step">
-        <h3>قدم ۵: نصب مهارت افکت‌ها</h3>
-        <pre dir="ltr"><code>git clone https://github.com/Vibha-Ramprakash/claude-video-effects $HOME\.claude\skills\effects</code></pre>
-      </div>
-      <div class="step">
-        <h3>قدم ۶: Claude Code را ری‌استارت کنید</h3>
-        <p>تمام! حالا <code dir="ltr">/effects</code> کار می‌کند.</p>
+    <section id="start">
+      <div class="wrap">
+        <div class="section-head"><h2>چطور استفاده کنم؟</h2><a href="guide.html">راهنمای کامل نصب (مک و ویندوز)</a></div>
+        <ol class="steps">
+          <li><span>۱</span>یک بار Claude Code و ابزارها را <a href="guide.html#mac">نصب کن</a>.</li>
+          <li><span>۲</span>یک بار مهارت افکت‌ها را <a href="guide.html#p2">اضافه کن</a>.</li>
+          <li><span>۳</span>ویدیو را داخل Claude بکش و پرامپت افکت را بفرست.</li>
+          <li><span>۴</span>خروجی <a href="guide.html#p4">آماده‌ی اینستاگرام</a> بگیر.</li>
+        </ol>
       </div>
     </section>
 
-    <section id="prompts">
-      <h2>پرامپت‌های آماده</h2>
-      <p>پرامپت‌ها عمداً <strong>انگلیسی</strong> هستند تا Claude دقیق‌ترین نتیجه را بدهد. کپی کنید و داخل Claude Code بفرستید. هرجا <code dir="ltr">[...]</code> دیدید، با اطلاعات خودتان عوض کنید.</p>
-
-      <div class="step" id="p1">
-        <h3>۱) نصب ابزارها</h3>
-        <pre dir="ltr"><code>I'm a beginner with no programming experience. Please check whether these are installed on my computer: Git, Python 3.10 or newer, FFmpeg and ffprobe. Install anything that is missing (on macOS use Homebrew, on Windows use winget). Explain each step in one simple sentence, and ask me before running anything that needs my password or admin rights. When you're done, show me the installed version of each tool.</code></pre>
-      </div>
-
-      <div class="step" id="p2">
-        <h3>۲) نصب و راه‌اندازی افکت‌ها</h3>
-        <pre dir="ltr"><code>Install the video effects skill from https://github.com/Vibha-Ramprakash/claude-video-effects into ~/.claude/skills/effects (on Windows use $HOME\.claude\skills\effects). If the folder already exists, update it with git pull instead of deleting it. Then run its scripts/setup.sh once and wait until it prints READY. If it prints NEED_FFMPEG or NEED_PYTHON, install what's missing and run it again. Finally, tell me if I need to restart Claude Code.</code></pre>
-      </div>
-
-      <div class="step" id="p3">
-        <h3>۳) گذاشتن افکت روی ویدیوی خودتان</h3>
-        <p>اول ویدیو را داخل پنجره‌ی Claude بکشید (Drag &amp; Drop). بعد یکی از این‌ها:</p>
-        <pre dir="ltr"><code>/effects orbit from 3 to 6 seconds</code></pre>
-        <pre dir="ltr"><code>/effects spotlight when I say "[a word from your video]", with the word [YOUR WORD] glowing behind me</code></pre>
-        <pre dir="ltr"><code>Use the effects skill on my video [drag your video here]. Add "glass-widgets" for the first 3 seconds, then "backdrop-word" with the text "[YOUR WORD]" when I say "[a word from your video]". Before rendering, show me check frames and make sure nothing covers my face. Keep my original audio and save the result as a new file next to my video. Don't overwrite my original.</code></pre>
-        <p class="tip">🎯 لیست کامل ۴۵ افکت در <a href="https://github.com/Vibha-Ramprakash/claude-video-effects#the-45-effects">README پروژه‌ی اصلی</a> است.</p>
-      </div>
-
-      <div class="step" id="p4">
-        <h3>۴) خروجی آماده برای اینستاگرام (۱۰۸۰×۱۹۲۰)</h3>
-        <pre dir="ltr"><code>Take my rendered video [file name]_effects.mp4 and export an Instagram Reels version with FFmpeg:
-- 1080x1920 (9:16). Scale to fit and crop if needed, never stretch.
-- H.264 (libx264, High profile), pixel format yuv420p, 30 fps
-- Video bitrate about 10 Mbps (maxrate 12M, bufsize 20M)
-- AAC audio, 128 kbps, 48 kHz (keep the original audio)
-- Add +faststart
-Save it as [file name]_instagram.mp4 next to the original and don't overwrite any file. Then run ffprobe and show me the resolution, codec, fps and bitrate to confirm.</code></pre>
-        <p>یا اگر می‌خواهید خودتان در ترمینال اجرا کنید:</p>
-        <pre dir="ltr"><code>ffmpeg -i input_effects.mp4 -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,fps=30" -c:v libx264 -profile:v high -pix_fmt yuv420p -b:v 10M -maxrate 12M -bufsize 20M -c:a aac -b:a 128k -ar 48000 -movflags +faststart output_instagram.mp4</code></pre>
-      </div>
-
-      <div class="step" id="p5">
-        <h3>۵) رفع خطا</h3>
-        <pre dir="ltr"><code>I got this error while using the effects skill:
-
-[paste the full error here]
-
-Explain in simple words what it means, find the cause, fix it, and tell me exactly what you changed. Don't delete or overwrite my videos.</code></pre>
-        <pre dir="ltr"><code>The effect doesn't look right: [describe what you see, e.g. "the word covers my face" or "it's too fast"]. Please show me check frames, adjust the plan, and render again as a new file.</code></pre>
+    <section id="library">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>کتابخانه‌ی افکت‌ها</h2>
+          <p class="muted">جای <code dir="ltr">[...]</code> را با متن خودت عوض کن. زمان‌ها (ثانیه) را هم می‌توانی تغییر دهی یا بنویسی «وقتی گفتم ...».</p>
+        </div>
+        <div class="controls">
+          <label class="search">
+            <span aria-hidden="true">🔍</span>
+            <input id="q" type="search" placeholder="جست‌وجو: اسم افکت، زوم، متن، ریلز، نور ..." autocomplete="off" aria-label="جست‌وجوی افکت">
+          </label>
+          <div class="chips" id="chips" role="group" aria-label="دسته‌ها"></div>
+          <p class="result-count" id="count" aria-live="polite"></p>
+        </div>
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>افکتی پیدا نشد. کلمه‌ی دیگری امتحان کن (مثلاً: zoom، متن، گرید).</p>
       </div>
     </section>
 
-    <section id="errors">
-      <h2>خطاهای رایج</h2>
-      <div class="faq">
-        <details><summary><code dir="ltr">ffmpeg: command not found</code> یا NEED_FFMPEG</summary><p>FFmpeg نصب نیست یا ترمینال هنوز آن را نمی‌شناسد. مک: <code dir="ltr">brew install ffmpeg</code>، ویندوز: <code dir="ltr">winget install ffmpeg</code>. بعد ترمینال را ببندید و باز کنید.</p></details>
-        <details><summary>NEED_PYTHON</summary><p>پایتون نیست یا قدیمی‌تر از ۳٫۱۰ است. مک: <code dir="ltr">brew install python@3.12</code>، ویندوز: <code dir="ltr">winget install Python.Python.3.12</code></p></details>
-        <details><summary>Claude دستور <code dir="ltr">/effects</code> را نمی‌شناسد</summary><p>مطمئن شوید پوشه دقیقاً <code dir="ltr">~/.claude/skills/effects</code> است و فایل SKILL.md داخلش هست، بعد Claude Code را ببندید و باز کنید.</p></details>
-        <details><summary><code dir="ltr">brew: command not found</code> (مک)</summary><p>Homebrew را از <a href="https://brew.sh">brew.sh</a> نصب کنید.</p></details>
-        <details><summary>winget یا bash روی ویندوز شناخته نمی‌شود</summary><p>برای winget، برنامه‌ی App Installer را از Microsoft Store به‌روز کنید. برای bash، Git for Windows را نصب کنید: <code dir="ltr">winget install --id Git.Git -e</code></p></details>
-        <details><summary>افکت یا نوشته روی صورت افتاده</summary><p>پرامپت دوم بخش «رفع خطا» را بفرستید تا Claude برنامه را اصلاح کند.</p></details>
-        <details><summary>بار اول خیلی طول می‌کشد</summary><p>طبیعی است: کتابخانه‌ها و مدل تشخیص کلمه نصب می‌شوند. ۱ تا ۳ دقیقه صبر کنید.</p></details>
+    <section id="looks-section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>نسخه‌های ویژه</h2>
+          <p class="muted">همان افکت‌ها با ظاهری خاص‌تر؛ جزو ۴۵ افکت حساب نمی‌شوند.</p>
+        </div>
+        <div class="grid" id="looks"></div>
       </div>
-      <ul class="tips">
-        <li>ویدیوی عمودی که خودتان در کادر هستید بهترین نتیجه را می‌دهد.</li>
-        <li>هر افکت را کوتاه نگه دارید (۱٫۵ تا ۴ ثانیه).</li>
-        <li>این افکت‌ها نسخه‌ی اولیه هستند؛ قبل از پست کردن خروجی را نگاه کنید.</li>
-        <li>صدا و زیرنویس اضافه نمی‌شود؛ آن‌ها را در CapCut اضافه کنید.</li>
-      </ul>
     </section>
 
-    <section id="credits" class="credits">
-      <h2>💛 قدردانی و مجوز</h2>
-      <p>همه‌ی افکت‌ها، کد و ایده‌ی اصلی متعلق به <strong>Vibha Ramprakash</strong> است.</p>
-      <ul>
-        <li>مخزن اصلی: <a href="https://github.com/Vibha-Ramprakash/claude-video-effects" dir="ltr">github.com/Vibha-Ramprakash/claude-video-effects</a></li>
-        <li>اینستاگرام: <a href="https://instagram.com/vibha.in.progress" dir="ltr">@vibha.in.progress</a></li>
-        <li><strong>مجوز پروژه‌ی اصلی: MIT</strong> (© 2026 Vibha Ramprakash). فونت‌ها و مدل‌های آن پروژه مجوزهای خودشان را دارند (YuNet: MIT، MediaPipe: Apache 2.0، فونت‌ها: SIL OFL و Apache 2.0).</li>
-        <li>این راهنما هیچ کد، تصویر یا متنی از پروژه‌ی اصلی کپی نکرده است؛ فقط لینک می‌دهد و روش دانلود را آموزش می‌دهد.</li>
-        <li>این راهنما رسمی نیست و از طرف Vibha یا Anthropic تأیید نشده است.</li>
-      </ul>
-      <p class="muted">محتوای این راهنما: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · کد سایت: MIT</p>
+    <section>
+      <div class="wrap">
+        <div class="credits" id="credits">
+          <h2>💛 قدردانی و مجوز</h2>
+          <p>کد و طراحی هر ۴۵ افکت کارِ <strong>Vibha Ramprakash</strong> است و در پروژه‌ی متن‌باز او منتشر شده. این سایت یک راهنمای آموزشی فارسی و مستقل است.</p>
+          <ul>
+            <li>مخزن اصلی: <a href="https://github.com/Vibha-Ramprakash/claude-video-effects" dir="ltr">github.com/Vibha-Ramprakash/claude-video-effects</a></li>
+            <li>اینستاگرام سازنده: <a href="https://instagram.com/vibha.in.progress" dir="ltr">@vibha.in.progress</a></li>
+            <li><strong>مجوز پروژه‌ی اصلی: MIT</strong> (© 2026 Vibha Ramprakash). فونت‌ها و مدل‌های آن مجوزهای خودشان را دارند (YuNet: MIT، MediaPipe: Apache 2.0، فونت‌ها: SIL OFL و Apache 2.0).</li>
+            <li>هیچ کد، تصویر یا ویدیویی از پروژه‌ی اصلی در این سایت نیست. همه‌ی پیش‌نمایش‌ها را با اجرای کد اصلی روی ویدیوهای خودم ساخته‌ام.</li>
+            <li>این راهنما رسمی نیست و از طرف Vibha یا Anthropic تأیید نشده است.</li>
+          </ul>
+          <p class="muted">محتوای این راهنما: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · کد سایت: MIT · ویدیوها و تصاویر پیش‌نمایش: © Yekta Ghafelehbashi</p>
+        </div>
+      </div>
     </section>
   </main>
 
+  <div class="combo" id="combo" hidden>
+    <span id="combo-n"></span>
+    <div class="btns">
+      <button type="button" class="btn primary" id="combo-copy">کپی پرامپت ترکیبی</button>
+      <button type="button" class="btn" id="combo-clear" aria-label="پاک کردن انتخاب‌ها">✕</button>
+    </div>
+  </div>
+
   <footer>
     <div class="wrap">
-      <p>ساخته‌شده توسط <strong>Yekta Ghafelehbashi</strong></p>
+      <p class="who">Yekta Ghafelehbashi</p>
       <p><a href="https://instagram.com/yekta_journal" dir="ltr">Instagram: @yekta_journal</a></p>
     </div>
   </footer>
 
+  <script src="effects-data.js"></script>
   <script src="script.js"></script>
+  <script src="gallery.js"></script>
 </body>
 </html>

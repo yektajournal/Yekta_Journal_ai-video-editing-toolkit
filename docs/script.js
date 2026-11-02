@@ -1,23 +1,24 @@
-// Add a copy button to every code block.
-document.querySelectorAll('pre').forEach(function (pre) {
-  var btn = document.createElement('button');
-  btn.type = 'button';
-  btn.className = 'copy-btn';
-  btn.textContent = 'کپی';
-  btn.setAttribute('aria-label', 'کپی کردن متن');
-  btn.addEventListener('click', function () {
-    var text = pre.querySelector('code').innerText;
-    copyText(text).then(function () {
-      btn.textContent = 'کپی شد ✓';
-      btn.classList.add('done');
-      setTimeout(function () {
-        btn.textContent = 'کپی';
-        btn.classList.remove('done');
-      }, 1800);
+// Copy buttons for every code block (also called again by gallery.js after it renders cards).
+function addCopyButtons(root) {
+  root.querySelectorAll('pre:not([data-copy])').forEach(function (pre) {
+    pre.setAttribute('data-copy', '');
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-btn';
+    btn.textContent = 'کپی';
+    btn.setAttribute('aria-label', 'کپی کردن متن');
+    btn.addEventListener('click', function () {
+      copyText(pre.querySelector('code').innerText).then(function () { flash(btn, 'کپی شد ✓', 'کپی'); });
     });
+    pre.appendChild(btn);
   });
-  pre.appendChild(btn);
-});
+}
+
+function flash(btn, on, off) {
+  btn.textContent = on;
+  btn.classList.add('done');
+  setTimeout(function () { btn.textContent = off; btn.classList.remove('done'); }, 1800);
+}
 
 function copyText(text) {
   if (navigator.clipboard && window.isSecureContext) {
@@ -38,3 +39,5 @@ function fallbackCopy(text) {
   try { document.execCommand('copy'); } finally { document.body.removeChild(ta); }
   return Promise.resolve();
 }
+
+addCopyButtons(document);

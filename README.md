@@ -4,6 +4,8 @@
 
 راهنمای ساده و قدم‌به‌قدم برای اینکه افکت‌های حرفه‌ای (مثل `orbit`، `spotlight`، `glass-widgets`، `timeline` و ...) را با کمک **Claude Code** روی ویدیوهای خودتان بگذارید؛ بدون نیاز به بلد بودن برنامه‌نویسی.
 
+🎬 **کتابخانه‌ی ۴۵ افکت:** سایت این راهنما برای هر ۴۵ افکت یک پیش‌نمایش ویدیویی، توضیح فارسی و پرامپت آماده دارد؛ با جست‌وجو، دسته‌بندی و ساختن پرامپت ترکیبی. همه‌ی پیش‌نمایش‌ها را با اجرای کد اصلی افکت‌ها روی ویدیوی خودم ساخته‌ام.
+
 🌐 **نسخه‌ی وب این راهنما (خواناتر روی موبایل):** بعد از انتشار، در آدرس `https://<نام-کاربری-گیت‌هاب>.github.io/ai-video-editing-toolkit/` در دسترس است.
 
 > ⚠️ **مهم:** افکت‌ها و کدِ اصلی را **من نساخته‌ام**. آن‌ها کارِ [Vibha Ramprakash](https://github.com/Vibha-Ramprakash) هستند و در پروژه‌ی متن‌باز [claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects) منتشر شده‌اند. این مخزن فقط یک **راهنمای آموزشی فارسی** است و هیچ کدی از آن پروژه را در خودش ندارد. (جزئیات در بخش [قدردانی و مجوز](#credits))
@@ -214,7 +216,7 @@ Use the effects skill on my video [drag your video here]. Add "glass-widgets" fo
 
 </div>
 
-> 🎯 لیست کامل ۴۵ افکت و توضیح هرکدام در [README پروژه‌ی اصلی](https://github.com/Vibha-Ramprakash/claude-video-effects#the-45-effects) است.
+> 🎯 هر ۴۵ افکت با پیش‌نمایش و پرامپت آماده در کتابخانه‌ی افکت‌های سایت است (`docs/index.html`).
 
 ### ۴) خروجی آماده برای اینستاگرام (۱۰۸۰×۱۹۲۰)
 
@@ -295,11 +297,13 @@ The effect doesn't look right: [describe what you see, e.g. "the word covers my 
 - اینستاگرام: [@vibha.in.progress](https://instagram.com/vibha.in.progress)
 - **مجوز پروژه‌ی اصلی: MIT** (© 2026 Vibha Ramprakash). فونت‌ها و مدل‌های داخل آن پروژه مجوزهای خودشان را دارند: تشخیص صورت OpenCV YuNet (MIT)، MediaPipe Selfie Segmenter (Apache 2.0) و فونت‌ها (SIL OFL و Apache 2.0).
 - این مخزن **هیچ کد، تصویر یا متنی** از پروژه‌ی اصلی را کپی نکرده است؛ فقط به آن لینک می‌دهد و روش دانلودش را آموزش می‌دهد. همه‌ی توضیحات فارسی این‌جا نوشته‌ی خود من است.
+- ویدیوهای پیش‌نمایش (`docs/previews/`) را با اجرای کد اصلی (`scripts/fx.py`) روی ویدیوهای خودم ساخته‌ام. تنها تغییر برای این رندرها: هندل `@vibha.in.progress` که در افکت `headline-wall` ثابت نوشته شده بود، با `@yekta_journal` جایگزین شد.
 - این راهنما رسمی نیست و از طرف Vibha یا Anthropic تأیید نشده است.
 
 ### مجوز همین راهنما
 - متن و محتوای آموزشی این مخزن تحت مجوز **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** منتشر شده است (فایل [`LICENSE`](LICENSE)): آزادید استفاده، ترجمه یا بازنشر کنید، فقط نام منبع را ذکر کنید.
 - کدهای کوچک سایت (HTML/CSS/JS در پوشه‌ی `docs/`) تحت مجوز **MIT** هستند (فایل [`LICENSE-CODE`](LICENSE-CODE)).
+- ویدیوها و تصاویر پیش‌نمایش در `docs/previews/` تصویر خود من هستند: **© Yekta Ghafelehbashi، همه‌ی حقوق محفوظ است** و شامل مجوزهای بالا نمی‌شوند.
 
 ---
 
