@@ -1,6 +1,6 @@
 # Publishing notes (GitHub + GitHub Pages)
 
-The website lives in `docs/` (plain HTML/CSS/JS, no build step). `docs/.nojekyll` tells GitHub Pages to serve the files as they are.
+The guide is `README.md`. Its previews live in `docs/previews/`.
 
 ## 1. Create the repository
 1. Go to https://github.com/new
@@ -18,14 +18,10 @@ git push -u origin main
 
 GitHub will ask you to sign in in the browser the first time.
 
-## 3. Turn on GitHub Pages
-1. On the repo page: **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main`, folder: `/docs` → **Save**
-4. After a minute or two the site is live at https://yektajournal.github.io/Yekta_Journal_ai-video-editing-toolkit/
+## 3. Share it
+The README is the main page: share https://github.com/yektajournal/Yekta_Journal_ai-video-editing-toolkit
 
-## 4. After it's live
-- Optional: in the repo's **About** box (gear icon), paste the Pages URL as the website.
+GitHub Pages is not used. The optional site in `docs/` stays in the repo but is not published.
 
 ## Preview locally
 ```bash
