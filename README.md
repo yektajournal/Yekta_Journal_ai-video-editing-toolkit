@@ -1118,7 +1118,6 @@ The effect doesn't look right: [describe what you see, e.g. "the word covers my 
 
 ### مجوز همین راهنما
 - متن و محتوای آموزشی این مخزن تحت مجوز **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** منتشر شده است (فایل [`LICENSE`](LICENSE)): آزادید استفاده، ترجمه یا بازنشر کنید، فقط نام منبع را ذکر کنید.
-- کدهای کوچک HTML/CSS/JS در پوشه‌ی `docs/` تحت مجوز **MIT** هستند (فایل [`LICENSE-CODE`](LICENSE-CODE)).
 - ویدیوها و تصاویر پیش‌نمایش در `docs/previews/` تصویر خود من هستند: **© Yekta Ghafelehbashi، همه‌ی حقوق محفوظ است** و شامل مجوزهای بالا نمی‌شوند.
 
 ---

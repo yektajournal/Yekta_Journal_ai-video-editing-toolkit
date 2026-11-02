@@ -21,11 +21,4 @@ GitHub will ask you to sign in in the browser the first time.
 ## 3. Share it
 The README is the main page: share https://github.com/yektajournal/Yekta_Journal_ai-video-editing-toolkit
 
-GitHub Pages is not used. The optional site in `docs/` stays in the repo but is not published.
-
-## Preview locally
-```bash
-cd ~/Desktop/ai-video-editing-toolkit/docs
-python3 -m http.server 8000
-```
-Then open http://localhost:8000
+There is no website; GitHub Pages is not used.
