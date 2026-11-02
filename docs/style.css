@@ -229,6 +229,9 @@ pre code { background: none; border: 0; padding: 0; font-size: .84rem; color: in
 footer { border-top: 1px solid var(--border); padding: 28px 0 96px; text-align: center; color: var(--muted); }
 footer p { margin: .2em 0; }
 footer .who { color: var(--text); font-weight: 800; font-size: 1.05rem; }
+footer .attribution { margin-top: 14px; font-size: .78rem; opacity: .75; }
+footer .attribution a { white-space: nowrap; color: inherit; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; }
+footer .attribution a:hover { color: var(--text); }
 
 @media (min-width: 560px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
