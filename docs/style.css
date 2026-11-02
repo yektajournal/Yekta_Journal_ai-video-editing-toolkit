@@ -92,10 +92,6 @@ kbd {
 .stats { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 18px; color: var(--muted); font-size: .9rem; }
 .stats b { color: var(--text); font-size: 1.2rem; margin-left: 4px; }
 
-.notice {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 12px 16px; font-size: .92rem; color: var(--muted);
-}
 
 /* ---------- quick start ---------- */
 .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
@@ -206,6 +202,7 @@ pre code { background: none; border: 0; padding: 0; font-size: .84rem; color: in
 }
 .toc a:hover { border-color: var(--accent); }
 .guide section { border-bottom: 1px solid var(--border); max-width: 820px; }
+.guide section:last-of-type { border-bottom: 0; }
 .tip { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; }
 .cards { list-style: none; padding: 0; display: grid; gap: 10px; }
 .cards li { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; }
@@ -215,11 +212,6 @@ pre code { background: none; border: 0; padding: 0; font-size: .84rem; color: in
 .faq details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 16px; margin: 8px 0; }
 .faq summary { cursor: pointer; font-weight: 600; }
 
-.credits {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 22px 18px; margin: 32px 0;
-}
-.credits ul { padding-right: 20px; margin: .4em 0; }
 
 footer { border-top: 1px solid var(--border); padding: 28px 0 96px; text-align: center; color: var(--muted); }
 footer p { margin: .2em 0; }
