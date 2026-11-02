@@ -6,7 +6,7 @@
 
 🎬 **کتابخانه‌ی ۴۵ افکت:** سایت این راهنما برای هر ۴۵ افکت یک پیش‌نمایش ویدیویی، توضیح فارسی و پرامپت آماده دارد؛ با جست‌وجو، دسته‌بندی و ساختن پرامپت ترکیبی. همه‌ی پیش‌نمایش‌ها را با اجرای کد اصلی افکت‌ها روی ویدیوی خودم ساخته‌ام.
 
-🌐 **نسخه‌ی وب این راهنما (خواناتر روی موبایل):** بعد از انتشار، در آدرس `https://<نام-کاربری-گیت‌هاب>.github.io/ai-video-editing-toolkit/` در دسترس است.
+🌐 **سایت این راهنما (کتابخانه‌ی ۴۵ افکت با پیش‌نمایش):** [yektajournal.github.io/Yekta_Journal_ai-video-editing-toolkit](https://yektajournal.github.io/Yekta_Journal_ai-video-editing-toolkit/)
 
 > ⚠️ **مهم:** افکت‌ها و کدِ اصلی را **من نساخته‌ام**. آن‌ها کارِ [Vibha Ramprakash](https://github.com/Vibha-Ramprakash) هستند و در پروژه‌ی متن‌باز [claude-video-effects](https://github.com/Vibha-Ramprakash/claude-video-effects) منتشر شده‌اند. این مخزن فقط یک **راهنمای آموزشی فارسی** است و هیچ کدی از آن پروژه را در خودش ندارد. (جزئیات در بخش [قدردانی و مجوز](#credits))
 
