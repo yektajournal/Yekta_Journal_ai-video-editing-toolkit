@@ -159,11 +159,6 @@ section { padding: 32px 0; }
 .body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .fxname { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1.05rem; font-weight: 700; direction: ltr; text-align: right; }
 .body p { margin: 0; }
-.badge {
-  display: inline-block; font-size: .8rem; color: var(--accent-3); border: 1px solid #4a3622;
-  background: #22180f; border-radius: 8px; padding: 2px 8px;
-}
-.warn { font-size: .85rem; color: #ffd6a0; background: #2a1d10; border-radius: 10px; padding: 6px 10px; }
 .card pre { margin-top: auto; }
 .card-actions { display: flex; gap: 8px; }
 .add-btn {

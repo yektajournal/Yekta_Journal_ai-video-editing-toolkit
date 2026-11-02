@@ -115,7 +115,6 @@ var EFFECTS = [
     p: '/effects dot-reveal from 0 to 2 seconds' },
   { n: 35, id: 'headline-wall', cat: 'text', a: 'headlines', o: ['text', 'total'],
     fa: 'تیترهای خودتان پشت سرتان روی هم جمع می‌شوند و در آخر یک عدد کل جلوی شما ظاهر می‌شود.',
-    warn: 'نکته: در کد اصلی، هندل @vibha.in.progress روی کارت‌های این افکت ثابت نوشته شده است. پرامپت زیر از Claude می‌خواهد هندل شما را جایگزین کند.',
     p: '/effects headline-wall from 3 to 7 seconds, headlines "[HEADLINE 1]::[VIEWS]|[HEADLINE 2]::[VIEWS]|[HEADLINE 3]::[VIEWS]", total "[YOUR REAL TOTAL]". The handle @vibha.in.progress is hard-coded on the cards in fx.py, so show my handle "@[YOUR HANDLE]" there instead' },
   { n: 36, id: 'checklist', cat: 'ui', a: 'tasks', o: ['title', 'text'],
     fa: 'لیست کارهای Claude زیر چانه‌تان؛ هر مرحله می‌چرخد و سبز تیک می‌خورد.',

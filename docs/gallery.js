@@ -45,8 +45,6 @@
     var b = el('div', 'body');
     b.appendChild(el('h3', 'fxname', fx.id));
     b.appendChild(el('p', '', fx.fa));
-    if (fx.o.indexOf('images') > -1) b.appendChild(el('span', 'badge', '📁 با اسکرین‌شات ریلزهای خودتان بهتر می‌شود'));
-    if (fx.warn) b.appendChild(el('p', 'warn', fx.warn));
 
     var pre = el('pre');
     pre.appendChild(el('code', '', fx.p));
